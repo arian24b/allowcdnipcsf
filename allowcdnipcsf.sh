@@ -13,9 +13,9 @@ fi
 
 if [[ -z $1 ]]; then
   echo "Select a cdn to add IPs:"
-  echo "   1) arvancloud"
-  echo "   2) cloudflare"
-  echo "   3) iranserver"
+  echo "1) arvancloud"
+  echo "2) cloudflare"
+  echo "3) iranserver"
   read -r -p "cdn: " option
 else
   option=$1
@@ -115,6 +115,9 @@ esac
   for IP in ${IPs}; do
     sudo csf -a "$IP" "$CDNNAME"
   done
-  sudo csf -r
+
+csf -df
+csf -tf
+sudo csf -r
 
 echo  "DONE"
