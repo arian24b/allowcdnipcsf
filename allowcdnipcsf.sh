@@ -81,7 +81,7 @@ case "$option" in
   CDNNAME="iranserver"
   echo "Downloading iranserver IPs list..."
 
-  IPsLink="https://ips.f95.com/"
+  IPsLink="https://ips.f95.com/ip.txt"
   IPsFile=$(mktemp /tmp/iranserver-ips.XXXXXX)
   # Delete the temp file if the script stopped for any reason
   trap 'rm -f ${IPsFile}' 0 2 3 15
